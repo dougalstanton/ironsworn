@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IM+Fell+English">
+    <link rel="stylesheet" href="style.css">
+
+    <script type="text/javascript" src="scripts.js"></script>
+
+    <title>Ironsworn Helper</title>
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="navbar">
+        <div class="navpage" onClick="showDice()">Dice</div>
+        <div class="navpage" onClick="showOracle()">Oracle</div>
+        <div class="navpage" onClick="showInfo()">Info</div>
+      </div>
+      <div class="bg-dark" id="navbarHeader">
+        <h1 class="text-center">Ironsworn Assistant</h1>
+      </div>
+    </header>
+
+    <main>
+      <div class="page" id="dicepage">
+        <h2>Dice Roller</h2>
+        <div class="tabnavbar">
+          <div class="tabnav tabactive" id="actiontab" onClick="displayAction()">Action</div>
+          <div class="tabnav" id="progresstab" onClick="displayProgress()">Progress</div>
+        </div>
+        <div class="section roller" id="action-roller">
+
+          <div class="labels label-challenge">Challenge (2d10)</div>
+          <div class="labels">Action (d6)</div>
+          <div class="labels">Stat</div>
+          <div class="labels">Adds</div>
+
+          <div class="die">
+            <div class="die-chal noselect" id="challengedie_a1" onClick="checkSelectAction(this)">10</div>
+          </div>
+          <div class="die">
+            <div class="die-chal noselect" id="challengedie_a2" onClick="checkSelectAction(this)">10</div>
+          </div>
+          <div class="die">
+            <div class="die-act noselect" id="actiondie" onClick="checkSelectAction(this)">6</div>
+          </div>
+          <div class="extra" id="extra-stat">
+            <div class="pressable" onClick="addToIDVal('extra-stat-val', 1)">
+              <i class="arrow up"></i>
+            </div>
+            <div id="extra-stat-val">0</div>
+            <div class="pressable" onClick="addToIDVal('extra-stat-val', -1)">
+              <i class="arrow down"></i>
+            </div>
+          </div>
+          <div class="extra" id="extra-bonus">
+            <div class="pressable" onClick="addToIDVal('extra-bonus-val', 1)">
+              <i class="arrow up"></i>
+            </div>
+            <div id="extra-bonus-val">0</div>
+            <div class="pressable" onClick="addToIDVal('extra-bonus-val', -1)">
+              <i class="arrow down"></i>
+            </div>
+          </div>
+
+          <div class="roll-button noselect pressable" id="roll-button_a"
+               onMouseDown="shakeAction()" onClick="rollAction()">Roll</div>
+
+          <div class="result" id="result_a">Outcome</div>
+        </div>
+
+        <div class="section roller hidden" id="progress-roller">
+
+          <div class="labels label-challenge">Challenge (2d10)</div>
+          <div class="labels">Progress</div>
+
+          <div class="die">
+            <div class="die-chal noselect" id="challengedie_p1" onClick="checkSelectProgress(this)">10</div>
+          </div>
+          <div class="die">
+            <div class="die-chal noselect" id="challengedie_p2" onClick="checkSelectProgress(this)">10</div>
+          </div>
+          <div class="extra" id="extra-progress">
+            <div class="pressable" onClick="addToIDVal('extra-progress-val', 1)">
+              <i class="arrow up"></i>
+            </div>
+            <div id="extra-progress-val">0</div>
+            <div class="pressable" onClick="addToIDVal('extra-progress-val', -1)">
+              <i class="arrow down"></i>
+            </div>
+          </div>
+
+          <div class="roll-button noselect pressable" id="roll-button_p"
+               onMouseDown="shakeProgress()" onClick="rollProgress()">Roll</div>
+
+          <div class="result" id="result_p">Outcome</div>
+        </div>
+
+        <div class="section log">
+          <h3>Log</h3>
+          <textarea class="logfield" id="dicelog" rows="20" cols="37" readonly>
+          </textarea>
+        </div>
+      </div>
+      <div class="page hidden" id="oraclepage">
+        <h2>Oracle</h2>
+        <div class="oracle">
+          <div class="oracletopic" onMouseDown="clearEle('oracleaction')" onClick="oracleAction()">Action</div><div id="oracleaction" class="oracleresult"> </div>
+          <div class="oracletopic" onMouseDown="clearEle('oracletheme')" onClick="oracleTheme()">Theme</div><div id="oracletheme" class="oracleresult"> </div>
+          <div class="oracletopic" onMouseDown="clearEle('oracleregion')" onClick="oracleRegion()">Region</div><div id="oracleregion" class="oracleresult"> </div>
+          <div class="oracletopic" onMouseDown="clearEle('oraclelocation')" onClick="oracleLocation()">Location</div><div id="oraclelocation" class="oracleresult"> </div>
+          <div class="oracletopic" onMouseDown="clearEle('oraclecoastalloc')" onClick="oracleCoastalLocation()">Coastal Waters Location</div><div id="oraclecoastalloc" class="oracleresult"> </div>
+          <div class="oracletopic" onMouseDown="clearEle('oraclelocdescr')" onClick="oracleLocationDescriptor()">Location Descriptor</div><div id="oraclelocdescr" class="oracleresult"> </div>
+          <div class="oracletopic" onMouseDown="clearEle('oraclesettname')" onClick="oracleSettName()">Settlement Name</div><div id="oraclesettname" class="oracleresult"> </div>
+          <div class="oracletopic" onMouseDown="clearEle('oraclesettnamegen')" onClick="oracleSettNameGen()">Quick Settlement Name Generator</div><div id="oraclesettnamegen" class="oracleresult"> </div>
+          <div class="oracletopic" onMouseDown="clearEle('oraclesetttroub')" onClick="oracleSettTrouble()">Settlement Trouble</div><div id="oraclesetttroub" class="oracleresult"> </div>
+          <div class="oracletopic" onMouseDown="clearEle('oraclecharrole')" onClick="oracleCharRole()">Character Role</div><div id="oraclecharrole" class="oracleresult"> </div>
+          <div class="oracletopic" onMouseDown="clearEle('oraclechargoal')" onClick="oracleCharGoal()">Character Goal</div><div id="oraclechargoal" class="oracleresult"> </div>
+          <div class="oracletopic" onMouseDown="clearEle('oraclechardescr')" onClick="oracleCharDescr()">Character Descriptor</div><div id="oraclechardescr" class="oracleresult"> </div>
+          <div class="oracletopic" onMouseDown="clearEle('oracleilandername')" onClick="oracleIronlanderName()">Ironlander Names</div><div id="oracleilandername" class="oracleresult"> </div>
+          <div class="oracletopic" onMouseDown="clearEle('oracleelfname')" onClick="oracleElfName()">Elf Names</div><div id="oracleelfname" class="oracleresult"> </div>
+          <div class="oracletopic" onMouseDown="clearEle('oraclegiantname')" onClick="oracleGiantName()">Giant Names</div><div id="oraclegiantname" class="oracleresult"> </div>
+          <div class="oracletopic" onMouseDown="clearEle('oraclevarouname')" onClick="oracleVarouName()">Varou Names</div><div id="oraclevarouname" class="oracleresult"> </div>
+          <div class="oracletopic" onMouseDown="clearEle('oracletrollname')" onClick="oracleTrollName()">Troll Names</div><div id="oracletrollname" class="oracleresult"> </div>
+          <div class="oracletopic" onMouseDown="clearEle('oraclecombataction')" onClick="oracleCombatAction()">Combat Action</div><div id="oraclecombataction" class="oracleresult"> </div>
+          <div class="oracletopic" onMouseDown="clearEle('oraclemysticbacklash')" onClick="oracleMysticBacklash()">Mystic Backlash</div><div id="oraclemysticbacklash" class="oracleresult"> </div>
+          <div class="oracletopic" onMouseDown="clearEle('oracleplottwist')" onClick="oraclePlotTwist()">Major Plot Twist</div><div id="oracleplottwist" class="oracleresult"> </div>
+          <div class="oracletopic" onMouseDown="clearEle('oraclechallrank')" onClick="oracleChallengeRank()">Challenge Rank</div><div id="oraclechallrank" class="oracleresult"> </div>
+          <div class="oracletopic" onMouseDown="clearEle('oracleroll100')" onClick="oracleRoll100()">Roll 1-100</div><div id="oracleroll100" class="oracleresult"> </div>
+        </div>
+      </div>
+
+      <div class="page hidden" id="infopage">
+        <h2>Information</h2>
+        <p>
+        This work is based on the role playing game <em>Ironsworn</em> (found
+        at <a href="https://www.ironswornrpg.com">www.ironswornrpg.com</a>),
+        created by Shawn Tomkin, and licensed for our use under the Creative
+        Commons Attribution-NonCommercial-ShareAlike 4.0 International license
+        (creativecommons.org/licenses/by-nc-sa/4.0/).
+        </p>
+        <p>
+        Various resources, including electronic copies of the rule book and
+        other downloadables can be found at <a
+    href="https://www.ironswornrpg.com">the official website</a>.
+        </p>
+
+      </div>
+
+    </main>
+
+  </body>
+</html>

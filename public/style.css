@@ -1,0 +1,318 @@
+body {
+	--main-text-size: 25px;
+	--main-color: #374F53;
+	--aux-color: #2A2A2A;
+	--die-size: 35px;
+	--chal-size: 45px;
+	--die-margin: 10px;
+	--chal-die-color: #003;
+	--act-die-color: #300;
+	font-family: 'IM Fell English', serif;
+	color: #222;
+	background: #EEE;
+}
+
+main {
+	max-width: 600px;
+	margin: auto;
+}
+
+h1 {
+	color: var(--aux-color, #2A2A2A);
+	text-align: center;
+}
+
+h2 {
+	text-align: center;
+}
+
+.navbar {
+	max-width: 600px;
+	margin: auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	text-align: center;
+}
+
+.navpage {
+	color: white;
+	background: var(--aux-color, #2A2A2A);
+}
+
+.navpage:hover {
+	filter: brightness(150%);
+}
+
+.section {
+	border-color: var(--main-color, #374F53);
+	border-width: 1px;
+	border-style: hidden solid solid solid;
+}
+
+.log {
+	border-style: solid;
+}
+
+.tabnavbar {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	text-align: center;
+	font-size: 18px;
+	font-variant: small-caps;
+	font-weight: bold;
+	color: var(--main-color, #374F53);
+}
+
+.tabnav {
+	border-color: var(--main-color, #374F53);
+	border-width: 1px;
+	border-style: solid solid solid solid;
+	filter: brightness(50%);
+}
+
+.tabnav:hover {
+	filter: brightness(150%);
+}
+
+.tabactive {
+	filter: brightness(100%);
+	border-style: solid solid hidden solid;
+}
+
+.labels {
+	text-align: center;
+	font-size: 14px;
+}
+
+.roller {
+	display: grid;
+	grid-gap: 2px;
+}
+
+.roller h2 {
+	text-align: center;
+}
+
+#action-roller {
+	grid-template-columns: 2fr 2fr 2fr 1fr 1fr;
+}
+
+#progress-roller {
+	grid-template-columns: 3fr 3fr 2fr;
+}
+
+#action-roller .roll-button {
+	grid-area: 3/1/4/6;
+}
+
+#progress-roller .roll-button {
+	grid-area: 3/1/4/4;
+}
+
+#action-roller .result {
+	grid-area: 4/1/5/6;
+}
+
+#progress-roller .result {
+	grid-area: 4/1/5/4;
+}
+
+.label-challenge {
+	grid-area: 1/1/2/3;
+}
+
+.roll-button {
+	font-size: var(--main-text-size, 25px);
+	background: var(--main-color, #374F53);
+	color: white;
+	text-align: center;
+	padding: 10px;
+	margin-left: 25%;
+	margin-right: 25%;
+	border-color: var(--main-color, #374F53);
+	border-width: 5px;
+	border-style: outset;
+}
+
+.result {
+	font-size: var(--main-text-size, 25px);
+	text-align: center;
+	font-weight: bold;
+	padding: 10px;
+	margin: 10px;
+}
+
+.pressable:hover {
+	filter: brightness(130%);
+}
+
+.pressed {
+	border-style: inset;
+}
+
+.die-val {
+	font-size: var(--main-text-size, 25px);
+	align-self: center;
+	justify-self: center;
+	color: white;
+}
+
+.die {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-self: center;
+	justify-self: center;
+	font-size: var(--main-text-size, 25px);
+	color: white;
+	text-align: center;
+	margin-top: var(--die-margin, 20px);
+	margin-bottom: var(--die-margin, 20px);
+}
+
+.die-act {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: var(--die-size, 50px);
+	height: var(--die-size, 50px);
+	background: var(--act-die-color, darkred);
+	border-style: outset;
+	border-width: 10px;
+	border-color: var(--act-die-color, darkred);
+}
+
+.die-chal {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: var(--chal-size, 60px);
+	height: var(--chal-size, 60px);
+	background: var(--chal-die-color, darkblue);
+	border-radius: 50%;
+	border-style: outset;
+	border-width: 10px;
+	border-color: var(--chal-die-color, darkblue);
+}
+
+.selected {
+	border-style: outset;
+	border-color: var(--main-color, #374F53);
+}
+
+.logfield {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-family: Sans;
+	font-size: 12px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	resize: none;
+}
+
+.extra {
+	justify-content: center;
+	align-items: center;
+	align-self: center;
+	justify-self: center;
+	font-size: var(--main-text-size, 25px);
+	color: var(--aux-color, #2A2A2A);
+	text-align: center;
+	margin-top: var(--die-margin, 20px);
+	margin-bottom: var(--die-margin, 20px);
+}
+
+.extra input {
+	font-size: var(--main-text-size, 25px);
+	width: 50%;
+}
+
+.noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+i {
+	border-style: solid;
+	border-color: var(--main-color, #374F53);
+	border-width: 0 6px 6px 0;
+	display: inline-block;
+	padding: 6px;
+}
+
+.up {
+	transform: rotate(-135deg);
+	-webkit-transform: rotate(-135deg);
+}
+
+.down {
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+}
+
+.shaking {
+	animation: shake 0.5s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+	0% { transform: translate(1px, 1px) rotate(0deg); }
+	10% { transform: translate(-1px, -2px) rotate(-1deg); }
+	20% { transform: translate(-3px, 0px) rotate(1deg); }
+	30% { transform: translate(3px, 2px) rotate(0deg); }
+	40% { transform: translate(1px, -1px) rotate(1deg); }
+	50% { transform: translate(-1px, 2px) rotate(-1deg); }
+	60% { transform: translate(-3px, 1px) rotate(0deg); }
+	70% { transform: translate(3px, 1px) rotate(-1deg); }
+	80% { transform: translate(-1px, -1px) rotate(1deg); }
+	90% { transform: translate(1px, 2px) rotate(0deg); }
+	100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.oracle {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-gap: 6px;
+}
+
+.oracletopic {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: white;
+	background: var(--aux-color, #2A2A2A);
+	min-height: 2.5em;
+	width: 100%;
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+.oracleresult {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-width: 1px;
+	border-color: var(--main-color, #374F53);
+	border-style: solid;
+}
+
+.oracletopic:hover {
+	filter: brightness(150%);
+}
+
+.hidden {
+	display: none;
+}
