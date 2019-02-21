@@ -225,8 +225,6 @@ function rollProgress() {
   let logMessage = "Progress Roll: ";
 
   // Always roll all for progress.
-  const c1Val = rollDie(10);
-  const c2Val = rollDie(10);
   rollVals = [];
   for (let i=0; i<eleArr.length; i++) {
     let roll = rollDie(10);
@@ -234,7 +232,7 @@ function rollProgress() {
     rollVals.push(roll);
   }
 
-  logMessage += "(" + c1Val + ", " + c2Val + ") vs " + pTotal + ": ";
+  logMessage += "(" + rollVals[0] + ", " + rollVals[1] + ") vs " + pTotal + ": ";
 
   // Get the roll result, update the result text and log.
 
