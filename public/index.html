@@ -18,9 +18,9 @@
 
     <header>
       <div class="navbar">
-        <div class="navpage" onClick="showDice()">Dice</div>
-        <div class="navpage" onClick="showOracle()">Oracle</div>
-        <div class="navpage" onClick="showInfo()">Info</div>
+        <div class="navpage noselect" onClick="showDice()">Dice</div>
+        <div class="navpage noselect" onClick="showOracle()">Oracle</div>
+        <div class="navpage noselect" onClick="showInfo()">Info</div>
       </div>
       <div class="bg-dark" id="navbarHeader">
         <h1 class="text-center">Ironsworn Assistant</h1>
@@ -36,10 +36,10 @@
         </div>
         <div class="section roller" id="action-roller">
 
-          <div class="labels label-challenge">Challenge (2d10)</div>
-          <div class="labels">Action (d6)</div>
-          <div class="labels">Stat</div>
-          <div class="labels">Adds</div>
+          <div class="labels label-challenge noselect">Challenge (2d10)</div>
+          <div class="labels noselect">Action (d6)</div>
+          <div class="labels noselect">Stat</div>
+          <div class="labels noselect">Adds</div>
 
           <div class="die">
             <div class="die-chal noselect" id="challengedie_a1" onClick="checkSelectAction(this)">10</div>
@@ -77,8 +77,8 @@
 
         <div class="section roller hidden" id="progress-roller">
 
-          <div class="labels label-challenge">Challenge (2d10)</div>
-          <div class="labels">Progress</div>
+          <div class="labels label-challenge noselect">Challenge (2d10)</div>
+          <div class="labels noselect">Progress</div>
 
           <div class="die">
             <div class="die-chal noselect" id="challengedie_p1" onClick="checkSelectProgress(this)">10</div>
