@@ -1,3 +1,8 @@
+html {
+	width: 100vw;
+	overflow-x: hidden;
+}
+
 body {
 	--main-text-size: 25px;
 	--main-color: #374F53;
@@ -10,9 +15,6 @@ body {
 	font-family: 'IM Fell English', serif;
 	color: #222;
 	background: #EEE;
-}
-
-main {
 	max-width: 600px;
 	margin: auto;
 }
@@ -27,8 +29,6 @@ h2 {
 }
 
 .navbar {
-	max-width: 600px;
-	margin: auto;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	text-align: center;
