@@ -677,6 +677,47 @@ function oraclePlotTwist() {
   rollOracle(options, "oracleplottwist");
 }
 
+function oraclePayThePrice() {
+  const weights = [[2,"Roll again and apply that result but make it worse"],
+                   [3,"A person or community you trusted loses faith in you "
+                      + "or acts against you."],
+                   [4,"A person or community you care about is exposed to danger"],
+                   [7,"You are separated from something or someone"],
+                   [7,"Your action has an unintended effect"],
+                   [9,"Something of value is lost or destroyed"],
+                   [9,"The current situation worsens"],
+                   [9,"A new danger or foe is revealed"],
+                   [9,"It causes a delay or puts you at a disadvantage"],
+                   [9,"It is harmful"],
+                   [9,"It is stressful"],
+                   [8,"A surprising development complicates your quest"],
+                   [5,"It wastes resources"],
+                   [4,"It forces you to act against your best intentions"],
+                   [4,"A friend, companion or ally is put in harm's way "
+                      + "(or you are, if alone)"],
+                   [2,"Roll twice more on this table. Both results occur"]];
+  const options = genOptions(weights);
+  rollOracle(options, "oraclepaytheprice");
+}
+
+function oracleOdds() {
+  const buttons = document.getElementsByName('odds');
+  var threshold = 51; // default 50/50 odds
+  for (i = 0; i < buttons.length; i++) {
+    if (buttons[i].checked) {
+      threshold = parseInt(buttons[i].value);
+    }
+  }
+  const roll = rollDie(100);
+  const match = roll == 100 || (roll % 11) == 0;
+  const ele = document.getElementById('oracleodds');
+  if (roll < threshold) {
+    ele.firstChild.data = match ? "HELL NO!" : "No";
+  } else {
+    ele.firstChild.data = match ? "HELL YES!" : "Yes";
+  }
+}
+
 function oracleChallengeRank() {
   const optionWgts = [[20, "Troublesome"], [35, "Dangerous"],
             [25, "Formidable"], [13, "Extreme"], [7, "Epic"]];

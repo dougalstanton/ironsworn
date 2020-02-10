@@ -299,6 +299,12 @@ i {
 	user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
+.oracleoptions {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  justify-self: center;
+}
+
 .oracleresult {
 	display: flex;
 	justify-content: center;

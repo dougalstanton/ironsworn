@@ -111,6 +111,15 @@
       <div class="page hidden" id="oraclepage">
         <h2>Oracle</h2>
         <div class="oracle">
+          <div class="oracletopic" onMouseDown="clearEle('oraclepaytheprice')" onClick="oraclePayThePrice()">Pay The Price</div><div id="oraclepaytheprice" class="oracleresult"> </div>
+          <div class="oracleoptions">
+          <label><input type="radio" name="odds" value="11">Almost Certain</input></label>
+          <label><input type="radio" name="odds" value="26">Likely</input></label>
+          <label><input type="radio" name="odds" value="51" checked="true">50/50</input></label>
+          <label><input type="radio" name="odds" value="76">Unlikely</input></label>
+          <label><input type="radio" name="odds" value="91">Small Chance</input></label>
+          </div>
+          <div class="oracletopic" onMouseDown="clearEle('oracleodds')" onClick="oracleOdds()">Ask The Oracle</div><div id="oracleodds" class="oracleresult"> </div>
           <div class="oracletopic" onMouseDown="clearEle('oracleaction')" onClick="oracleAction()">Action</div><div id="oracleaction" class="oracleresult"> </div>
           <div class="oracletopic" onMouseDown="clearEle('oracletheme')" onClick="oracleTheme()">Theme</div><div id="oracletheme" class="oracleresult"> </div>
           <div class="oracletopic" onMouseDown="clearEle('oracleregion')" onClick="oracleRegion()">Region</div><div id="oracleregion" class="oracleresult"> </div>
