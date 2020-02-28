@@ -111,17 +111,27 @@
       <div class="page hidden" id="oraclepage">
         <h2>Oracle</h2>
         <div class="oracle">
-          <div class="oracletopic" onMouseDown="clearEle('oraclepaytheprice')" onClick="oraclePayThePrice()">Pay The Price</div><div id="oraclepaytheprice" class="oracleresult"> </div>
           <div class="oracleoptions">
-          <label><input type="radio" name="odds" value="11">Almost Certain</input></label>
-          <label><input type="radio" name="odds" value="26">Likely</input></label>
-          <label><input type="radio" name="odds" value="51" checked="true">50/50</input></label>
-          <label><input type="radio" name="odds" value="76">Unlikely</input></label>
-          <label><input type="radio" name="odds" value="91">Small Chance</input></label>
+          <label><input type="radio" name="odds" value="11"><span>Almost Certain</span></input></label>
+          <label><input type="radio" name="odds" value="26"><span>Likely</span></input></label>
+          <label><input type="radio" name="odds" value="51" checked="true"><span>50/50</span></input></label>
+          <label><input type="radio" name="odds" value="76"><span>Unlikely</span></input></label>
+          <label><input type="radio" name="odds" value="91"><span>Small Chance</span></input></label>
           </div>
-          <div class="oracletopic" onMouseDown="clearEle('oracleodds')" onClick="oracleOdds()">Ask The Oracle</div><div id="oracleodds" class="oracleresult"> </div>
+          <div class="oracletopic" onMouseDown="clearEle('oracleodds')" onClick="oracleOdds()">Ask The Oracle</div>
+          <div id="oracleodds" class="oracleresult"> </div>
+          <h3>Fate</h3>
+          <div class="oracletopic" onMouseDown="clearEle('oraclepaytheprice')" onClick="oraclePayThePrice()">Pay The Price</div><div id="oraclepaytheprice" class="oracleresult"> </div>
           <div class="oracletopic" onMouseDown="clearEle('oracleaction')" onClick="oracleAction()">Action</div><div id="oracleaction" class="oracleresult"> </div>
           <div class="oracletopic" onMouseDown="clearEle('oracletheme')" onClick="oracleTheme()">Theme</div><div id="oracletheme" class="oracleresult"> </div>
+          <div class="oracletopic" onMouseDown="clearEle('oraclechallrank')" onClick="oracleChallengeRank()">Challenge Rank</div><div id="oraclechallrank" class="oracleresult"> </div>
+          <div class="oracletopic" onMouseDown="clearEle('oracleroll100')" onClick="oracleRoll100()">Roll 1-100</div><div id="oracleroll100" class="oracleresult"> </div>
+          <h3>Adventure</h3>
+          <div class="oracletopic" onMouseDown="clearEle('oraclecombataction')" onClick="oracleCombatAction()">Combat Action</div><div id="oraclecombataction" class="oracleresult"> </div>
+          <div class="oracletopic" onMouseDown="clearEle('oraclemysticbacklash')" onClick="oracleMysticBacklash()">Mystic Backlash</div><div id="oraclemysticbacklash" class="oracleresult"> </div>
+          <div class="oracletopic" onMouseDown="clearEle('oracleplottwist')" onClick="oraclePlotTwist()">Major Plot Twist</div><div id="oracleplottwist" class="oracleresult"> </div>
+
+          <h3>Places</h3>
           <div class="oracletopic" onMouseDown="clearEle('oracleregion')" onClick="oracleRegion()">Region</div><div id="oracleregion" class="oracleresult"> </div>
           <div class="oracletopic" onMouseDown="clearEle('oraclelocation')" onClick="oracleLocation()">Location</div><div id="oraclelocation" class="oracleresult"> </div>
           <div class="oracletopic" onMouseDown="clearEle('oraclecoastalloc')" onClick="oracleCoastalLocation()">Coastal Waters Location</div><div id="oraclecoastalloc" class="oracleresult"> </div>
@@ -129,6 +139,7 @@
           <div class="oracletopic" onMouseDown="clearEle('oraclesettname')" onClick="oracleSettName()">Settlement Name</div><div id="oraclesettname" class="oracleresult"> </div>
           <div class="oracletopic" onMouseDown="clearEle('oraclesettnamegen')" onClick="oracleSettNameGen()">Quick Settlement Name Generator</div><div id="oraclesettnamegen" class="oracleresult"> </div>
           <div class="oracletopic" onMouseDown="clearEle('oraclesetttroub')" onClick="oracleSettTrouble()">Settlement Trouble</div><div id="oraclesetttroub" class="oracleresult"> </div>
+          <h3>People</h3>
           <div class="oracletopic" onMouseDown="clearEle('oraclecharrole')" onClick="oracleCharRole()">Character Role</div><div id="oraclecharrole" class="oracleresult"> </div>
           <div class="oracletopic" onMouseDown="clearEle('oraclechargoal')" onClick="oracleCharGoal()">Character Goal</div><div id="oraclechargoal" class="oracleresult"> </div>
           <div class="oracletopic" onMouseDown="clearEle('oraclechardescr')" onClick="oracleCharDescr()">Character Descriptor</div><div id="oraclechardescr" class="oracleresult"> </div>
@@ -137,11 +148,8 @@
           <div class="oracletopic" onMouseDown="clearEle('oraclegiantname')" onClick="oracleGiantName()">Giant Names</div><div id="oraclegiantname" class="oracleresult"> </div>
           <div class="oracletopic" onMouseDown="clearEle('oraclevarouname')" onClick="oracleVarouName()">Varou Names</div><div id="oraclevarouname" class="oracleresult"> </div>
           <div class="oracletopic" onMouseDown="clearEle('oracletrollname')" onClick="oracleTrollName()">Troll Names</div><div id="oracletrollname" class="oracleresult"> </div>
-          <div class="oracletopic" onMouseDown="clearEle('oraclecombataction')" onClick="oracleCombatAction()">Combat Action</div><div id="oraclecombataction" class="oracleresult"> </div>
-          <div class="oracletopic" onMouseDown="clearEle('oraclemysticbacklash')" onClick="oracleMysticBacklash()">Mystic Backlash</div><div id="oraclemysticbacklash" class="oracleresult"> </div>
-          <div class="oracletopic" onMouseDown="clearEle('oracleplottwist')" onClick="oraclePlotTwist()">Major Plot Twist</div><div id="oracleplottwist" class="oracleresult"> </div>
-          <div class="oracletopic" onMouseDown="clearEle('oraclechallrank')" onClick="oracleChallengeRank()">Challenge Rank</div><div id="oraclechallrank" class="oracleresult"> </div>
-          <div class="oracletopic" onMouseDown="clearEle('oracleroll100')" onClick="oracleRoll100()">Roll 1-100</div><div id="oracleroll100" class="oracleresult"> </div>
+          
+
         </div>
       </div>
 

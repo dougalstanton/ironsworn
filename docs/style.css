@@ -282,6 +282,12 @@ i {
 	grid-gap: 6px;
 }
 
+.oracle h3 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  margin-block-end: 0.1em;
+}
+
 .oracletopic {
 	display: flex;
 	justify-content: center;
@@ -298,11 +304,19 @@ i {
 	-ms-user-select: none; /* Internet Explorer/Edge */
 	user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
-
 .oracleoptions {
+  margin-top: 0;
   grid-column-start: 1;
   grid-column-end: 3;
-  justify-self: center;
+  display: flex;
+  justify-content: space-between;
+}
+.oracleoptions input[type="radio"] {
+  /*display: none;*/
+}
+.oracleoptions input[type="radio"]:hover ~ * {
+  font-weight: bold;
+  filter: brightness(150%);
 }
 
 .oracleresult {
